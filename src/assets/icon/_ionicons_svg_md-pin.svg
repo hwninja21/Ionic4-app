@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 570.00001 570"
+   version="1.1"
+   id="svg3725"
+   sodipodi:docname="_ionicons_svg_md-pin.svg"
+   width="570"
+   height="570"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata3731">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs3729" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="2560"
+     inkscape:window-height="1361"
+     id="namedview3727"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     showguides="false"
+     inkscape:zoom="1.140625"
+     inkscape:cx="87.526782"
+     inkscape:cy="140.68489"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3725" />
+  <path
+     d="m 281.93774,8.9315187 c -88.004,0 -160,70.5570013 -160,156.8010213 0,117.599 160,291.199 160,291.199 0,0 160,-173.6 160,-291.199 0,-86.24402 -71.996,-156.8010213 -160,-156.8010213 z m 0,212.8010213 c -31.996,0 -57.144,-24.645 -57.144,-56 0,-31.357 25.147,-56.00001 57.144,-56.00001 31.997,0 57.144,24.64301 57.144,56.00001 0,31.355 -25.148,56 -57.144,56 z"
+     id="path3723"
+     inkscape:connector-curvature="0"
+     style="fill:#2f3d48;fill-opacity:1" />
+  <flowRoot
+     xml:space="preserve"
+     id="flowRoot3733"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     transform="translate(-81.021163,-29.616428)"><flowRegion
+       id="flowRegion3735"><rect
+         id="rect3737"
+         width="496.21918"
+         height="597.04108"
+         x="-20.164383"
+         y="198.54794" /></flowRegion><flowPara
+       id="flowPara3739" /></flowRoot>  <flowRoot
+     xml:space="preserve"
+     id="flowRoot3741"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:85.33333588px;line-height:1.25;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     transform="translate(71.526782,-78.712318)"><flowRegion
+       id="flowRegion3743"
+       style="font-size:85.33333588px"><rect
+         id="rect3745"
+         width="436.60275"
+         height="120.9863"
+         x="30.684931"
+         y="554.49316"
+         style="font-size:85.33333588px" /></flowRegion><flowPara
+       id="flowPara3747"
+       style="fill:#2f3d48;fill-opacity:1">Locations</flowPara></flowRoot></svg>

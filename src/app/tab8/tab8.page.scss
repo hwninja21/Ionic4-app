@@ -1,0 +1,42 @@
+
+:root {
+    --ion-safe-area-top: 20px;
+    --ion-safe-area-bottom: 22px;
+  }
+  .swiper-slide {
+    display: block;
+  }
+  ion-slide > p {
+    margin-top: -100%;
+    
+  
+  }
+  ion-slide > img {
+    max-height: 100%;
+    max-width: 100%;
+    margin: 36px 0;
+    
+  }
+
+  
+
+
+  ion-slides { --bullet-background: darkgreen;  }
+
+
+
+  .ion-padding { 
+    border-radius: 3%;
+    padding: 5px;
+    max-width: 100%;
+    margin-right: 10px;
+    margin-left: 10px;
+    max-height: 100%;
+   
+      }
+
+    
+        
+
+  
+

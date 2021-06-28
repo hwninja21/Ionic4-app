@@ -1,0 +1,7 @@
+{
+  "appId": "uk.co.janes.mary",
+  "appName": "Mary-Jane’s Coffee",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www"
+}

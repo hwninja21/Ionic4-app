@@ -1,0 +1,160 @@
+<!-- <ion-header>
+<ion-toolbar color="secondary">
+  <ion-title>Sign Up</ion-title>
+</ion-toolbar>
+</ion-header> -->
+<ion-header>
+    <ion-toolbar color="secondary">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="profile"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Sign Up</ion-title>
+    </ion-toolbar>
+  </ion-header>
+<ion-content>
+  
+    <p align="center"> 
+        <img src="../../assets/mjlogo.png" align="center" style="width : 100px ; height : 100px" >      
+      </p>  
+<!-- <ion-segment value="register">
+    <ion-segment-button  routerLink="/tabs/tabs/profile" >
+      <ion-label><h1>Login</h1></ion-label>
+    </ion-segment-button >
+    <ion-segment-button  value="register">
+      <ion-label><h1>Register</h1></ion-label>
+    </ion-segment-button>
+  </ion-segment> -->
+  
+  <ion-grid fixed no-padding>
+    <ion-row>
+      <ion-col size="12">
+        <form
+          [formGroup]="signupForm"
+          (ngSubmit)="onSubmit(signupForm.value)"
+          *ngIf="!(authService.isAuthenticated | async)"
+        >
+          <ion-item>
+            <ion-label position="floating">EMAIL</ion-label>
+            <ion-input
+              type="email"
+              formControlName="email"
+            ></ion-input>
+          </ion-item>
+          <!-- <div class="errorMessage" *ngIf="signupForm.get('email').hasError(error.type) && (signupForm.get('email').dirty || signupForm.get('email').touched)">
+          </div>   -->
+          <div *ngIf="submitted && frm.email.errors" class="invalid-feedback">
+            <ion-item *ngIf="frm.email.errors.required">
+                <p style="color:red">EMAIL IS REQUIRED!</p>
+            </ion-item>
+            <ion-item *ngIf="frm.email.errors.email">
+                <p style="color:red">EMAIL MUST BE A VALID EMAIL ADDRESS!</p>
+            </ion-item>
+          </div> 
+          <!-- <ion-item>
+            <ion-label position="floating">Password (min. 6 characters)</ion-label>
+            <ion-input 
+              type="password"
+              formControlName="password"
+            ></ion-input>
+          </ion-item> -->
+          <ion-item>
+            <ion-label position="floating">PASSWORD(6-14 CHARACTERS)</ion-label>
+            <ion-input
+              type="text"
+              formControlName="password"
+              *ngIf="showPasswordText"
+            ></ion-input>
+            <ion-input
+              type="password"
+              formControlName="password"
+              *ngIf="!showPasswordText"
+            ></ion-input>
+            <ion-icon *ngIf="!showPasswordText" (click)="showPasswordText = !showPasswordText" slot="end" size="large" style="padding-top: 10px;" name="eye"></ion-icon>
+            <ion-icon *ngIf="showPasswordText" (click)="showPasswordText = !showPasswordText" slot="end" size="large" style="padding-top: 10px;" name="eye-off"></ion-icon>
+          </ion-item>
+          <div *ngIf="submitted && frm.password.errors" class="invalid-feedback">
+            <ion-item *ngIf="frm.password.errors.required">
+                <p style="color:red">PASSWORD IS REQUIRED!</p>
+            </ion-item>
+            <ion-item *ngIf="frm.password.errors.minlength">
+                <p style="color:red">PASSWORD MUST BE AT LEAST 6 CHARACTERS!</p>
+            </ion-item>
+          </div>
+          <ion-item>
+            <ion-label position="floating">CONFIRM PASSWORD</ion-label>
+            <ion-input
+              type="text"
+              formControlName="password1"
+              *ngIf="showPasswordText1"
+            ></ion-input>
+            <ion-input
+              type="password"
+              formControlName="password1"
+              *ngIf="!showPasswordText1"
+            ></ion-input>
+            <ion-icon *ngIf="!showPasswordText1" (click)="showPasswordText1 = !showPasswordText1" slot="end" size="large" style="padding-top: 10px;" name="eye"></ion-icon>
+            <ion-icon *ngIf="showPasswordText1" (click)="showPasswordText1 = !showPasswordText1" slot="end" size="large" style="padding-top: 10px;" name="eye-off"></ion-icon>
+          </ion-item>
+          <div *ngIf="submitted && passwordNotMatch" class="invalid-feedback">
+            <ion-item>
+                <p style="color:red">CHECK AND ENSURE YOUR PASSWORDS MATCH</p>
+            </ion-item>
+          </div>
+          <div style="background-color: white; padding: 15px 0px 15px 10px;">
+            <ion-toggle formControlName="termsOfUse" ></ion-toggle>
+            <ion-label class="ion-text-wrap"><h5>I agree to the <a href="https://mary-janes.co.uk/terms-of-website-use/" target="_blank">TERMS OF USE</a> AND HAVE READ AND UNDERSTOOD THE<a href="https://mary-janes.co.uk/privacy-policy/" target="_blank"> PRIVACY NOTICE</a></h5></ion-label>
+          </div>
+          <div *ngIf="submitted && frm.termsOfUse.errors" class="invalid-feedback">
+            <ion-item *ngIf="frm.termsOfUse.errors.required">
+                <p style="color:red">YOU NEED TO AGREE TO THE TERMS OF USE </p>
+            </ion-item>
+          </div>
+          <ion-item *ngIf="signupFailure">
+            <p style="color:red">{{signupFailure}}</p>
+          </ion-item>  
+          <ion-button expand="block" type="submit" class="add">
+            CREATE ACCOUNT
+          </ion-button>
+        </form>
+      </ion-col>
+      
+      <!-- <ion-col size="12" *ngIf="(authService.isAuthenticated | async)">
+      <form
+        #f="ngForm"
+        (ngSubmit)= "onEdit(f)"
+        *ngIf="(authService.isAuthenticated | async)"
+      >
+        <ion-item>
+          <ion-label position="floating">First Name</ion-label>
+          <ion-input
+            name="Forename"
+            type="text"
+            [(ngModel)]=" model.Forename"
+          ></ion-input>
+          
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Last Name</ion-label>
+          <ion-input
+            name="Surname"
+            type="text"
+            [(ngModel)]="model.Surname"
+          ></ion-input>
+          
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Birthday</ion-label>
+          <ion-input
+            name="DateOfBirth"
+            type="date"
+            [(ngModel)]="model.DateOfBirth"
+          ></ion-input>
+        </ion-item>
+            <ion-button expand="block" type="submit" color="primary">
+          Submit
+        </ion-button>
+      </form>
+    </ion-col> -->
+    </ion-row>
+  </ion-grid>
+</ion-content>

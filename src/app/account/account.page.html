@@ -1,0 +1,99 @@
+
+<ion-content>
+  <ion-header>
+    <ion-toolbar color="secondary">
+      <!-- <ion-buttons slot="start">
+        <ion-back-button defaultHref="register"></ion-back-button>
+      </ion-buttons> -->
+      <ion-title>JOIN THE LOYALTY SCHEME</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-grid  > 
+      <ion-row >
+        <ion-col style="background:#2f3d48;" >
+          <div class="ion-text-center" class="ion-padding" align="center"> 
+            <ion-text color="tertiary">JOIN THE MARY-JANE’S LOYALTY SCHEME BELOW TO COLLECT STAMPS AND EARN FREE DRINKS! WE NEED YOUR DETAILS SO WE KNOW WHO HAS EARNT THE STAMPS. PLEASE OPT IN TO RECEIVE OCCASIONAL EMAILS WITH GREAT OFFERS, FREEBIES AND A SPECIAL SOMETHING IN TIME FOR YOUR BIRTHDAY!</ion-text>
+          </div>     
+      </ion-col>
+      </ion-row>
+    </ion-grid>
+  <!-- <p align="center"> 
+      <img src="../../assets/mjlogo.png" align="center" style="width : 100px ; height : 100px" >      
+  </p> -->
+  <ion-grid fixed no-padding>
+    <ion-row>
+      <ion-col size="12">
+        <form
+          [formGroup]="signupForm"
+          (ngSubmit)="onRegister(signupForm.value)"
+        >
+          <ion-item>
+            <ion-label position="floating">FIRST NAME</ion-label>
+            <ion-input
+              type="text"
+              formControlName="Forename"
+            ></ion-input>
+          </ion-item>
+          <div *ngIf="submitted && frm.Forename.errors" class="invalid-feedback">
+            <ion-item *ngIf="frm.Forename.errors.required">
+                <p style="color:red">FIRST NAME IS REQUIRED!</p>
+            </ion-item>
+          </div> 
+          <ion-item>
+            <ion-label position="floating">LAST NAME</ion-label>
+            <ion-input
+              type="text"
+              formControlName="Surname"
+            ></ion-input>
+          </ion-item>
+          <div *ngIf="submitted && frm.Surname.errors" class="invalid-feedback">
+            <ion-item *ngIf="frm.Surname.errors.required">
+                <p style="color:red">SURNAME IS REQUIRED!</p>
+            </ion-item>
+          </div>   
+          <ion-item>
+            <ion-label position="floating">BIRTHDAY</ion-label>
+            <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" formControlName="DateOfBirth"></ion-datetime>
+          </ion-item>
+          <div *ngIf="submitted && frm.DateOfBirth.errors" class="invalid-feedback">
+            <ion-item *ngIf="frm.DateOfBirth.errors.required">
+                <p style="color:red">DATE OF BIRTH IS REQUIRED!</p>
+            </ion-item>
+          </div>  
+          <ion-item>
+            <ion-label text-wrap><h5>TELL ME ABOUT GREAT OFFERS, FREEBIES AND MORE! (YOU CAN OPT OUT AT ANY TIME).</h5></ion-label>
+            <ion-toggle formControlName="optout" slot="start"></ion-toggle>
+          </ion-item> 
+          <!-- <div style="background-color: white; padding: 15px 0px 15px 10px;">
+            <ion-checkbox formControlName="optout" style="float: left;"></ion-checkbox>
+            <ion-label text-wrap><h5>Tell me about great offers, freebies and more! (You can opt out at any time).</h5></ion-label>
+          </div> -->
+
+          <!-- <div *ngIf="submitted && frm.optout.errors" class="invalid-feedback">
+            <ion-item *ngIf="frm.optout.errors.required">
+                <p style="color:red">You need to opt in to finish registeration, however you can opt out at any time.</p>
+            </ion-item>
+          </div> -->
+          
+          <!-- <ion-item *ngIf="signupFailure">
+              <p style="color:red">{{signupFailure}}</p>
+          </ion-item>           -->
+          <ion-button expand="block" type="submit" class="add">
+            JOIN
+          </ion-button>
+        </form>
+      </ion-col>
+      <ion-col size="12" *ngIf="(authService.isAuthenticated | async)">
+        <ion-button 
+          expand="block"
+          type="button"
+          class="add"
+          (click)="onLogout()"
+        >
+          LOG OUT
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

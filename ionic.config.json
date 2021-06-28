@@ -1,0 +1,8 @@
+{
+  "name": "Mary-Jane’s Coffee",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}

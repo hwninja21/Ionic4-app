@@ -1,0 +1,80 @@
+
+<ion-content>
+    
+    <!-- <div class="loyality0" style='--background: var(--my-var)'></div> -->
+    <!-- <div *ngIf="pointsNum==0" class="loyality0" style="background: url(../assets/images/Loyalty0.png) no-repeat 52% center/cover"></div>
+    <div *ngIf="pointsNum==1" class="loyality0" style="background: url(../assets/images/Loyalty1.png) no-repeat 52% center/cover"></div> -->
+<!-- </ion-content> -->
+<!-- <ion-content *ngIf="!(authService.isAuthenticated | async)"> -->
+  <p></p>
+  <ion-grid *ngIf="!(authService.isAuthenticated | async)">
+    <ion-row>
+      <ion-col class="ion-padding" style="background:#2f3d48;">
+        <div class="ion-text-start" class="ion-padding">
+          <ion-text color="tertiary">LOG IN TO START COLLECTING LOYALTY POINTS</ion-text>
+        </div>             
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+      <ion-button expand="block" type="submit" color="primary" routerLink="/register">
+        SIGN UP
+      </ion-button>
+      <ion-button expand="block" color="primary"  routerLink="/login" >LOG IN</ion-button>
+    </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <p align="center"> 
+          <img src="../assets/images/logo-back-2.png" align="center" style="width : 200px ; height : 200px" >      
+        </p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid *ngIf="(authService.isAuthenticated | async)">
+    <ion-row>
+      <ion-col class="ion-padding" style="background:#2f3d48;" >
+        <div     align= "center" >
+          <ion-text color="tertiary">HAND YOUR PHONE TO THE BARISTA WHO WILL ENTER A CODE TO REWARD YOU WITH A LOYALTY STAMP</ion-text>
+        </div>
+    
+      </ion-col>
+    </ion-row>
+<ion-row>
+  <ion-col>
+      <div  align="center"> 
+    
+    
+          <img class="loyality0" *ngIf="pointsNum==0" src="../assets/images/Loyalty0.png" align="center" style="width : 70% ; height : 70%"  >      
+          <img class="loyality0" *ngIf="pointsNum==1" src="../assets/images/Loyalty1.png" align="center" style="width : 70% ; height : 70%" >
+          <img class="loyality0" *ngIf="pointsNum==2" src="../assets/images/Loyalty2.png" align="center" style="width : 70% ; height : 70%" >      
+          <img class="loyality0" *ngIf="pointsNum==3" src="../assets/images/Loyalty3.png" align="center" style="width : 70% ; height : 70%" >
+          <img class="loyality0" *ngIf="pointsNum==4" src="../assets/images/Loyalty4.png" align="center" style="width : 70% ; height : 70%" >      
+          <img class="loyality0" *ngIf="pointsNum==5" src="../assets/images/Loyalty5.png" align="center" style="width : 70% ; height : 70%" >      
+          <img class="loyality0" *ngIf="pointsNum==6" src="../assets/images/Loyalty6.png" align="center" style="width : 70% ; height : 70%" >  
+    
+      
+        </div> 
+        
+          
+            
+
+  </ion-col>
+ 
+</ion-row>
+<ion-row>
+  <ion-col>
+      <div>
+          <ion-button class="add"  align="center" style="width :70%"  *ngIf="(authService.isAuthenticated | async)" routerLink="/tabs/tabs/keypad" (click)="clickPassCode()">
+            ENTER PASSCODE
+          </ion-button>
+      </div>
+  </ion-col>
+</ion-row>
+
+
+  </ion-grid>
+  
+  
+  
+</ion-content> 

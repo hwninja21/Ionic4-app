@@ -1,0 +1,84 @@
+<ion-header>
+    <ion-toolbar color="secondary">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="profile"></ion-back-button>
+      </ion-buttons>
+      <ion-title>LOG IN</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+  <p align="center"> 
+      <img src="../../assets/mjlogo.png" align="center" style="width : 100px ; height : 100px" >      
+  </p>  
+  <ion-grid fixed no-padding>
+    <ion-row>
+      <ion-col size="12">
+        <div *ngIf="msg">
+          <ion-item>
+            <p style="color:red">{{msg}}</p>
+          </ion-item>
+        </div>
+        <form
+          *ngIf="!(authService.isAuthenticated | async)"
+          [formGroup]="loginForm"
+          (ngSubmit)="onLogin(loginForm.value)"
+        >
+          <ion-item>
+            <ion-label position="floating">EMAIL</ion-label>
+            <ion-input
+              type="text"
+              formControlName="username"
+            ></ion-input>
+          </ion-item>
+          <div *ngIf="submitted && frm.username.errors" class="invalid-feedback">
+            <ion-item *ngIf="frm.username.errors.required">
+                <p style="color:red">EMAIL IS REQUIRED!</p>
+            </ion-item>
+            <ion-item *ngIf="frm.username.errors.email">
+                <p style="color:red">EMAIL MUST BE A VALID EMAIL ADDRESS!</p>
+            </ion-item>
+          </div>
+          <ion-item>
+            <ion-label position="floating">PASSWORD</ion-label>
+            <ion-input
+              type="text"
+              formControlName="password"
+              *ngIf="showPasswordText"
+            ></ion-input>
+            <ion-input
+              type="password"
+              formControlName="password"
+              *ngIf="!showPasswordText"
+            ></ion-input>
+            <ion-icon *ngIf="!showPasswordText" (click)="showPasswordText = !showPasswordText" slot="end" size="large" style="padding-top: 10px;" name="eye"></ion-icon>
+            <ion-icon *ngIf="showPasswordText" (click)="showPasswordText = !showPasswordText" slot="end" size="large" style="padding-top: 10px;" name="eye-off"></ion-icon>
+          </ion-item>
+          <div *ngIf="submitted && frm.password.errors" class="invalid-feedback">
+            <ion-item *ngIf="submitted && frm.password.errors.required">
+                <p style="color:red">PASSWORD IS REQUIRED!</p>
+            </ion-item>
+          </div>
+          <!-- <ion-item>
+            <ion-label position="floating">Birthday</ion-label>
+            <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" formControlName="DateOfBirth"></ion-datetime>
+          </ion-item>
+          <ion-item>
+            <ion-label text-wrap><h5>Tell me about great offers, freebies and more! (You can opt out at any time).</h5></ion-label>
+            <ion-checkbox formControlName="opt" slot="start"></ion-checkbox>
+          </ion-item>  -->
+          <ion-item>
+            <ion-toggle formControlName="keepLogged" slot="start"></ion-toggle>
+            <ion-label class="ion-text-wrap">KEEP ME LOGGED IN ON THIS DEVICE</ion-label>
+          </ion-item>
+          <ion-item *ngIf="loginFailure">
+              <p style="color:red">{{loginFailure}}</p>
+          </ion-item>
+          <ion-button expand="block" type="submit" class="add" >
+            LOGIN
+          </ion-button>
+          <ion-button expand="block" class="add" routerLink="/reset">FORGOT YOUR PASSWORD?</ion-button>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,83 @@
+<ion-content>
+
+  <p align="center"> 
+      <img src="../../assets/mjlogo.png" align="center" style="width : 100px ; height : 100px" >      
+    </p>
+
+  
+<ion-grid fixed no-padding>
+<ion-row>
+  <ion-col size="12">
+    <form
+      [formGroup]="resetForm"
+      (ngSubmit)="onReset(resetForm.value)"
+    >
+      <!-- <div *ngIf="submitted && usernameWarningMsg" class="invalid-feedback">
+        <ion-item>
+            <p style="color:gray">{{usernameWarningMsg}}</p>
+        </ion-item>
+      </div>     -->
+      <ion-item>
+          <ion-label position="floating">EMAIL</ion-label>
+          <ion-input
+            type="email"
+            formControlName="email"
+          ></ion-input>
+      </ion-item>
+      <!-- <div class="errorMessage" *ngIf="signupForm.get('email').hasError(error.type) && (signupForm.get('email').dirty || signupForm.get('email').touched)">
+      </div>   -->
+      <div *ngIf="submitted && frm.email.errors" class="invalid-feedback">
+        <ion-item *ngIf="frm.email.errors.required">
+            <p style="color:red">EMAIL IS REQUIRED!</p>
+        </ion-item>
+        <ion-item *ngIf="frm.email.errors.email">
+            <p style="color:red">EMAIL MUST BE A VALID EMAIL ADDRESS!</p>
+        </ion-item>
+      </div> 
+      <ion-item>
+        <ion-label position="floating">FIRST NAME</ion-label>
+        <ion-input
+          type="text"
+          formControlName="Forename"
+        ></ion-input>
+      </ion-item>
+      <div *ngIf="submitted && frm.Forename.errors" class="invalid-feedback">
+        <ion-item *ngIf="frm.Forename.errors.required">
+            <p style="color:red">FIRST NAME IS REQUIRED!</p>
+        </ion-item>
+      </div> 
+      <ion-item>
+        <ion-label position="floating">LAST NAME</ion-label>
+        <ion-input
+          type="text"
+          formControlName="Surname"
+        ></ion-input>
+      </ion-item>
+      <div *ngIf="submitted && frm.Surname.errors" class="invalid-feedback">
+        <ion-item *ngIf="frm.Surname.errors.required">
+            <p style="color:red">SURNAME IS REQUIRED!</p>
+        </ion-item>
+      </div>   
+      <ion-item>
+        <ion-label position="floating">BIRTHDAY</ion-label>
+        <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" formControlName="DateOfBirth"></ion-datetime>
+      </ion-item>
+      <div *ngIf="submitted && frm.DateOfBirth.errors" class="invalid-feedback">
+        <ion-item *ngIf="frm.DateOfBirth.errors.required">
+            <p style="color:red">DATE OF BIRTH IS REQUIRED!</p>
+        </ion-item>
+      </div>  
+      <ion-item>
+        <ion-label text-wrap><h5>TELL ME ABOUT GREAT OFFERS, FREEBIES AND MORE! (YOU CAN OPT OUT AT ANY TIME).</h5></ion-label>
+        <ion-toggle formControlName="opt" slot="start"></ion-toggle>
+      </ion-item>    
+      <ion-button class="add" expand="block" type="submit" >
+        SUBMIT
+      </ion-button>
+      
+      
+      <ion-button class="add" expand="block"  routerLink="/tabs/tabs/update">
+          CANCEL
+      </ion-button>
+      
+    </form>

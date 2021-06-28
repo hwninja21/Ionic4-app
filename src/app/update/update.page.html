@@ -1,0 +1,58 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>update</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<!-- <ion-content *ngIf="(authService.isAuthenticated | async)" > -->
+<ion-content>
+  <p align="center"> 
+    <img src="../../assets/mjlogo.png" align="center" style="width : 100px ; height : 100px" >      
+  </p> 
+
+  <ion-button *ngIf="(authService.isAuthenticated | async)" class= "add"
+  expand="block"
+  
+  
+  (click)="onLogout()"
+> 
+  LOG OUT
+</ion-button>
+
+<ion-button *ngIf="(authService.isAuthenticated | async)"
+  expand="block"
+  type="button"
+  color="primary"
+  class= "add"
+  (click)="goToDetails()"
+>
+  UPDATE PROFILE
+</ion-button>
+<ion-grid *ngIf="!(authService.isAuthenticated | async)">
+  <ion-row>
+    <ion-col class="ion-padding" style="background:#2f3d48;">
+      <div class="ion-text-center" class="ion-padding" align="center">
+        <ion-text color="tertiary"> YOU NEED TO SIGN UP AND LOG IN TO UPDATE YOUR PROFILE DETAILS</ion-text>
+      </div>             
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+    <ion-button expand="block" type="submit" color="primary" routerLink="/register">
+      SIGN UP
+    </ion-button>
+    <ion-button expand="block" color="primary"  routerLink="/login" >LOG IN</ion-button>
+  </ion-col>
+  </ion-row>
+</ion-grid>
+
+<p align="center"> 
+  <img src="../assets/images/logo-back-2.png" align="center" style="width : 200px ; height : 200px" >      
+</p> 
+
+
+
+
+
+
+</ion-content>

@@ -1,0 +1,21 @@
+
+ <!-- <ion-content>
+   
+  
+      <div id="map_canvas"></div>
+  
+    </ion-content> -->
+
+    
+    <ion-content>
+      <agm-map
+      
+      
+      [style.height.px]="height"
+       [latitude]="lat"
+       [longitude]="lng">
+         <agm-marker [latitude]="lat" [longitude]="lng" [iconUrl]="icon">
+          <agm-info-window>MARY-JANES COFFEE<br>50 WHITELADIES RD,<br> BRISTOL BS8 2NH<br></agm-info-window>
+         </agm-marker>
+      </agm-map>
+    </ion-content>

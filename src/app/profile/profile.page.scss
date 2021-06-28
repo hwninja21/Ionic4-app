@@ -1,0 +1,28 @@
+// ion-segment-button {
+//     font-weight: 300;
+//     --background-activated: #2f3d48;
+//     --background:  #96a796;
+//    --background-checked:  #2f3d48;
+//   //  --background-hover:  #96a796;
+ion-col{
+    border-radius: 3%;
+
+
+}
+.add{
+
+    --background-activated: #96a796;
+  }
+
+  .pincode-input{
+   
+    
+    background: rgba(255, 255, 255, 0.5);
+    color: #2f3d48;
+    margin-bottom: 0%;
+    text-align: center;
+    margin-top:5%;
+    border-radius: 3%;
+    margin-right: 5px;
+    margin-left: 5px;
+}
